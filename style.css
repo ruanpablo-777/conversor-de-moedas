@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+#container {
+    background-color: white;
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    border : 1px solid rgba(0, 0, 0, 0.263);
+    border-radius: 10px;
+}
+
+#content {
+    & #value-money {
+        font-size: 15px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: gray;
+        margin-bottom: 8px;
+    }
+
+    & #value-money-converted {
+        font-size: 24px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 8px;
+    }
+
+    & #dateof-update-money {
+        font-size: 10px;
+        color: gray;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 8px;
+    }
+}
+
+#content-convert {
+    display: flex;
+    gap: 10px;
+
+    & #convert-1 {
+        border: 1px solid gray;
+        border-radius: 5px;
+
+        & #select-money {
+            border: none;
+            border-bottom: 1px solid ;
+            outline: none;
+        }
+    }
+
+    & #convert-2 {
+        border: 1px solid gray;
+        border-radius: 5px;
+
+        & #select-money-2 {
+            border: none;
+            border-bottom: 1px solid ;
+            outline: none;
+        }
+    }
+}
+
+#select-money, #select-money-2 {
+    width: 100px;
+
+}
+
+
+input {
+    width: 150px;
+}
