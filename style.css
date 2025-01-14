@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,19 +10,27 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     display: flex;
     justify-content: center;
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
     font-weight: 400;
+    
 }
 
 #container {
+    margin-top: 40px;
     background-color: white;
-    width: 350px;
+    width: 400px;
     height: 400px;
     padding: 10px;
     border : 1px solid rgba(0, 0, 0, 0.263);
@@ -29,48 +40,60 @@ h1 {
 #content {
     & #value-money {
         font-size: 15px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: gray;
+        font-family: "Roboto", serif;
+        color: #767676;
         margin-bottom: 8px;
     }
 
     & #value-money-converted {
         font-size: 24px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Roboto", serif;
+        color: #111111;
+        font-weight: 400;
         margin-bottom: 8px;
     }
 
     & #dateof-update-money {
         font-size: 10px;
-        color: gray;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #767676;
+        font-family: "Roboto", serif;
         margin-bottom: 8px;
     }
 }
 
 #content-convert {
     display: flex;
+    align-items: center;
     gap: 10px;
 
     & #convert-1 {
         border: 1px solid gray;
         border-radius: 5px;
+        width: 160px;
 
         & #select-money {
             border: none;
-            border-bottom: 1px solid ;
             outline: none;
+            color: #444444;
+            font-family: "Roboto", serif;
+            font-weight: bold;
+            width: 150px;
         }
     }
 
     & #convert-2 {
         border: 1px solid gray;
         border-radius: 5px;
+        width: 160px;
+
 
         & #select-money-2 {
             border: none;
-            border-bottom: 1px solid ;
             outline: none;
+            color: #444444;
+            font-family: "Roboto", serif;
+            font-weight: bold;
+            width: 150px;
         }
     }
 }
@@ -83,4 +106,20 @@ h1 {
 
 input {
     width: 150px;
+    outline: none;
+    border: none;
+    border-top: 1px solid gray;
+    font-family: "Roboto", serif;
+    padding: 5px;
+
+}
+
+#button {
+    background: none;
+    border: none;
+    width: 30px;
+    height: 20px;
+    font-family: "Roboto", serif;
+
+    
 }
