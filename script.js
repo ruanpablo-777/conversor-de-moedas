@@ -2,7 +2,15 @@ let selectMoney = document.getElementById("select-money")
 let selectMoney2 = document.getElementById("select-money-2")
 let valueMoney = document.getElementById('value-money')
 let valueMoneyConverted = document.getElementById('value-money-converted')
+let inputNumber1 = document.getElementById('input-number-1')
+let inputNumber2 = document.getElementById('input-number-2')
 console.log(selectMoney)
+
+inputNumber1.addEventListener('change', () => {
+   
+    console.log(inputNumber1.value)
+    inputNumber1.textContent = 3
+})
 
 const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/latest/USD", {
     method: "GET",
@@ -37,7 +45,7 @@ const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/l
     document.addEventListener('click', () => {
         defineSelect1(selectMoney.value, selectMoney2.value)
 
-    })
+ })
 
 })
 
@@ -59,6 +67,9 @@ function defineSelect1 (value1, value2) {
 
 function convertMoney(value1, value2) {
     
-    let mult = parseFloat(value1) * parseFloat(value2)
+    //let mult = parseFloat(value1) * parseFloat(value2)
     console.log(mult)
 }
+
+
+console.log()
