@@ -36,8 +36,52 @@
                 <input type="number" name="" id="input-number-2">
             </div>
         </div>
-        <div id="abc"></div>
+        <canvas class="line-chart" width="300px" height="170px"></canvas>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementsByClassName('line-chart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [1, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+  options: {
+    animations: {
+      tension: {
+        duration: 2000,
+        easing: 'erase',
+        from: 0.5,
+        to: 1,
+        loop: true
+      }
+    },
+    scales: {
+      y: { // defining min and max so hiding the dataset does not change scale range
+        min: 0,
+        max: 50
+      }
+    }
+  }
+});
+
+
+    </script>
+
 
 </body>
 <script src="script.js"></script>

@@ -123,3 +123,7 @@ input {
 
     
 }
+
+canvas {
+    z-index: 12;
+}

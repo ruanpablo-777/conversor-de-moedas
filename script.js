@@ -8,7 +8,7 @@ let theLastUpdate = document.getElementById('dateof-update-money')
 
 
 
-const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/latest/EUR/", {
+const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/latest/USD/", {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/l
         document.addEventListener('click', () => {
             defineSelect1(selectMoney.value, selectMoney2.value)
         })
-    }) .catch(error => console.log(error('Erro', error)))
+    }).catch(error => console.error('Erro', error))
 
 
 
