@@ -4,6 +4,7 @@ const selectSecondMoney = document.getElementById('select-money-2')
 let valueSelectFirstMoney = 0 
 let valueSelectSecondMoney = 0
 let chart;
+
 function atualizar(value1, value2){
     valueSelectFirstMoney = parseFloat(value1[1])
     valueSelectSecondMoney = parseFloat(value2[1])

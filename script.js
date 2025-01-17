@@ -8,7 +8,7 @@ let theLastUpdate = document.getElementById('dateof-update-money')
 
 
 
-const api = fetch("http://localhost:3023/proxy/latest/EUR", {
+const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/latest/USD", {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ function convertMoney(value1, value2) {
 
     inputNumber2.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-            let mult = parseFloat(inputNumber2.value) / parseFloat(value2)
+            let mult = parseFloat(inputNumber2.value) + parseFloat(value1)
             console.log(mult.toFixed(2))
             inputNumber1.value = mult.toFixed(2)
         }
