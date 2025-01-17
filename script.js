@@ -8,7 +8,7 @@ let theLastUpdate = document.getElementById('dateof-update-money')
 
 
 
-const api = fetch("https://v6.exchangerate-api.com/v6/23a3ebe869b290c1ed195f22/latest/USD/", {
+const api = fetch("http://localhost:3023/proxy/latest/EUR", {
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -52,6 +52,7 @@ function defineSelect1(value1, value2) {
     console.log(palavras[1])
     console.log(palavras1[1])
     convertMoney(palavras[1], palavras1[1])
+    atualizar(palavras[1], palavras1[1])
 }
 
 function convertMoney(value1, value2) {
