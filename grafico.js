@@ -28,7 +28,7 @@ chart = new Chart(ctx, {
   data: {
     labels: ['',value1,'',value2,''],
     datasets: [{
-      label: `${value1[0]} = ${value2[0]}`,
+      label: `Currency `,
       data: [0,valueSelectFirstMoney,0,valueSelectSecondMoney,0],
       borderWidth: 1
     }]
@@ -41,6 +41,7 @@ chart = new Chart(ctx, {
     }
   },
   options: {
+ 
     animations: {
       tension: {
         duration: 2000,
@@ -58,16 +59,7 @@ chart = new Chart(ctx, {
     }
   },
  
-  plugins: {
-    title: {
-        display: true,
-        text: 'Custom Chart Title',
-        padding: {
-            top: 10,
-            bottom: 30
-        }
-    }
-},
+
 
 });
 
