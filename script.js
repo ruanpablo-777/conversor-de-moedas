@@ -24,10 +24,11 @@ const api = fetch("http://localhost:3023/proxy/latest/EUR", {
 
         Object.entries(rates).forEach(([currency, rate], index) => {
             let option = document.createElement('option')
-            option.innerHTML = `${currency}: ${rate}`
+            option.innerHTML = `${currency} ${rate}`
+            console.log(option)
 
             let option2 = document.createElement('option')
-            option2.innerHTML = `${currency}: ${rate}`
+            option2.innerHTML = `${currency} ${rate}`
 
             selectMoney.appendChild(option)
             selectMoney2.appendChild(option2)
@@ -35,11 +36,16 @@ const api = fetch("http://localhost:3023/proxy/latest/EUR", {
         valueMoney.textContent = selectMoney.value
         valueMoneyConverted.textContent = selectMoney2.value
 
-        document.addEventListener('click', () => {
+        selectMoney.addEventListener('click', () => {
+            defineSelect1(selectMoney.value, selectMoney2.value)
+        })
+        selectMoney2.addEventListener('click', () => {
             defineSelect1(selectMoney.value, selectMoney2.value)
         })
     }).catch(error => console.error('Erro', error))
 
+
+document.addEventListener('DOMContentLoaded', () => {defineSelect1(selectMoney.value, selectMoney2.value)})
 
 
 function defineSelect1(value1, value2) {
@@ -52,16 +58,22 @@ function defineSelect1(value1, value2) {
     console.log(palavras[1])
     console.log(palavras1[1])
     convertMoney(palavras[1], palavras1[1])
-    atualizar(palavras[1], palavras1[1])
+    atualizar(palavras, palavras1)
 }
 
 function convertMoney(value1, value2) {
 
     inputNumber1.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
+            if(value1 > value2){
+
+                let mult = parseFloat(inputNumber1.value) / parseFloat(value1)
+                inputNumber2.value = mult.toFixed(2)
+            }else {
             let mult = parseFloat(inputNumber1.value) * parseFloat(value2)
             inputNumber2.value = mult.toFixed(2)
             console.log(mult)
+            }
 
         }
     })

@@ -5,8 +5,18 @@ let valueSelectFirstMoney = 0
 let valueSelectSecondMoney = 0
 let chart;
 function atualizar(value1, value2){
-    valueSelectFirstMoney = parseFloat(value1)
-    valueSelectSecondMoney = parseFloat(value2)
+    valueSelectFirstMoney = parseFloat(value1[1])
+    valueSelectSecondMoney = parseFloat(value2[1])
+let max = 0
+    if (valueSelectFirstMoney > 10) {
+        max = valueSelectFirstMoney + 10
+    } else if (valueSelectSecondMoney > 10) {
+        max = valueSelectSecondMoney + 10
+    } else {
+        max = 10
+    }
+
+    console.log(value1)
 
     if (chart) {
         chart.destroy()
@@ -15,10 +25,10 @@ function atualizar(value1, value2){
 chart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['','dolar','','real',''],
+    labels: ['',value1,'',value2,''],
     datasets: [{
-      label: 'Value',
-      data: [1,valueSelectFirstMoney,0,valueSelectSecondMoney,0],
+      label: `${value1[0]} = ${value2[0]}`,
+      data: [0,valueSelectFirstMoney,0,valueSelectSecondMoney,0],
       borderWidth: 1
     }]
   },
@@ -42,10 +52,22 @@ chart = new Chart(ctx, {
     scales: {
       y: { // defining min and max so hiding the dataset does not change scale range
         min: 0,
-        max: 10
+        max: max
       }
     }
-  }
+  },
+ 
+  plugins: {
+    title: {
+        display: true,
+        text: 'Custom Chart Title',
+        padding: {
+            top: 10,
+            bottom: 30
+        }
+    }
+},
+
 });
 
 }
