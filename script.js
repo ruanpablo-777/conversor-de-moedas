@@ -81,7 +81,7 @@ function convertMoney(value1, value2) {
 
     inputNumber2.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-            let mult = parseFloat(inputNumber2.value) + parseFloat(value1)
+            let mult = parseFloat(inputNumber2.value) / parseFloat(value2)
             inputNumber1.value = mult.toFixed(2)
         }
     })
