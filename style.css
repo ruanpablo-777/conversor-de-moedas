@@ -13,6 +13,7 @@ body {
     background-color: white;
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 h1 {
@@ -126,4 +127,22 @@ input {
 
 canvas {
     z-index: 12;
+ 
+}
+
+@media screen and (max-width: 450px ) {
+    #container {
+        height: 450px;
+    }
+    #content-convert {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #button {
+        display: none;
+    }
+    #canvas{
+        
+    }
 }

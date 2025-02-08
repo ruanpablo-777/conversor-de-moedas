@@ -17,7 +17,6 @@ let max = 0
         max = 10
     }
 
-    console.log(value1)
 
     if (chart) {
         chart.destroy()
